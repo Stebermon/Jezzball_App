@@ -142,13 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1283ede85fd039743a24ca39b782f32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colLen: 13
-  rowLen: 7
-  xSpace: 1.5
-  ySpace: 1.4
+  colLen: 20
+  rowLen: 10
   blocks: {fileID: 5792195699409852224, guid: 057743752cd2050408d10393c4769747, type: 3}
-  xStart: -9.145049
-  yStart: 4.230133
 --- !u!4 &53846365
 Transform:
   m_ObjectHideFlags: 0
