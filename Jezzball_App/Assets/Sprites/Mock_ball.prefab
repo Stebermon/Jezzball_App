@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa58c528bd6d45c4a86ddefb3b34fe21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balls_rb: {fileID: 1634202719177080399}
   gameBalls: {fileID: 0}
   numBalls: 0
 --- !u!58 &1634202719177080396
