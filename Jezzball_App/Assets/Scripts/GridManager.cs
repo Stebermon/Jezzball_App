@@ -14,19 +14,27 @@ public class GridManager : MonoBehaviour
         xSpace = 1f;
         ySpace = 1f;
         var cam = Camera.main;
+        colNum = cam.pixelWidth / 100 - 1;
+        rowNum = cam.pixelHeight / 100;
+
         var topLeft = (Vector2)cam.ScreenToWorldPoint(new Vector3(0, cam.pixelHeight, cam.nearClipPlane));
         var topRight = (Vector2)cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth, cam.pixelHeight, cam.nearClipPlane));
 
         // Add half the size of the block to topLeft coordinate to position the sprite perfectly at the edge
-        xStart = topLeft.x + xSpace / 2;
-        yStart = topLeft.y + ySpace / 2;
+        xStart = topLeft.x + xSpace /2;
+        yStart = topLeft.y - ySpace / 2;
 
 
         Debug.Log(xSpace);
         Debug.Log(blocks.GetComponent<SpriteRenderer>().bounds.size);
+        var num = 0;
         for (int i = 0; i < colNum * rowNum; i++)
         {
-            Instantiate(blocks, new Vector3(xStart + (xSpace * (i % colNum)), yStart + (-ySpace * (i / colNum))), Quaternion.identity);
+            var clone = Instantiate(blocks, new Vector3(xStart + (xSpace * (i % colNum)), yStart + (-ySpace * (i / colNum))), Quaternion.identity);
+            clone.GetComponent<SpriteRenderer>().color = new Color(.9f, .9f,.9f,1f);
+            clone.name = "Block " + num;
+            clone.transform.SetParent(GameObject.Find("Canvas").transform);
+            num++;
             //block.transform.localScale = new Vector2(1, 1);
         }
     }
